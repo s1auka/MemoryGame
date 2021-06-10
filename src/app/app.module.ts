@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContentComponent } from './components/content/content.component';
 import { RulesComponent } from './components/rules/rules.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { RulesComponent } from './components/rules/rules.component';
         NavbarComponent,
         ContentComponent,
         RulesComponent,
+        NotFoundPageComponent,
     ],
     imports: [
         BrowserModule,
