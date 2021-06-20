@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 
 const EASY_LEVEL = "Easy";
 const MEDIUM_LEVEL = "Medium";
-const HARD_LEVEL = "Hard"
+const HARD_LEVEL = "Hard";
+
+const LEVELS: string[] = [EASY_LEVEL, MEDIUM_LEVEL, HARD_LEVEL];
+let selectedValue: string = LEVELS[0];
+
+const CARDS_IN_ROW = 4;
 
 enum NumberOfCardsByLevel {
     Easy = 12,
@@ -10,22 +15,46 @@ enum NumberOfCardsByLevel {
     Hard = 20,
 }
 
-@Injectable()
-export class SettingsService {
-    private levels: string[] = [EASY_LEVEL, MEDIUM_LEVEL, HARD_LEVEL];
-    private selectedValue: string = this.levels[0];
+export interface CardsInTable {
+    cardsInRow: Number;
+    cardsInColumn: Number;
+    totalCards: Number;
+}
 
+@Injectable()
+export class LevelControlService {
 
     getLevels(): string[] {
-        return this.levels;
+        return LEVELS;
     }
 
     getSelectedValue(): string {
-        return this.selectedValue;
+        return selectedValue;
     }
 
     setSelectedValue(value: string) {
-        this.selectedValue = value;
-        console.log("selected")
+        selectedValue = value;
     }
 }
+
+
+
+export class ItemControlService {
+
+    getCardsInRowAndColumn(): CardsInTable {
+        return {
+            cardsInRow: CARDS_IN_ROW,
+            cardsInColumn: getNumberOfCards() / CARDS_IN_ROW,
+            totalCards: +getNumberOfCards(),
+
+        }
+    }
+
+
+}
+
+function getNumberOfCards(): any {
+    return +NumberOfCardsByLevel[<any>selectedValue];
+
+}
+

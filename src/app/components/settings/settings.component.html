@@ -1,20 +1,3 @@
-<!-- <form [formGroup]="form">
-    <input type="radio" formControlName="level" value="easy">
-    <label for="easy">Easy</label><br>
-    <input type="radio" formControlName="level" value="medium" checked>
-    <label for="medium">Medium</label><br>
-    <input type="radio" formControlName="level" value="hard">
-    <label for="hard">Hard</label><br>
-</form> -->
-
-<!-- <div>
-    <div *ngFor="let level of levels">
-        <input type="radio" [(ngModel)]="radioSelectedValue" value="{{level.value}}" (change)="onItemChange(level)" />
-        {{level.value}}
-    </div>
-
-</div> -->
-
 <div>
     <div *ngFor="let level of levels">
         <input type="radio" [(ngModel)]="selectedValue" value="{{level}}" (change)="onLevelChange(level)" />

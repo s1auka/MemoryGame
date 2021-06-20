@@ -1,4 +1,5 @@
-import { SettingsService } from './services/settings.service';
+import { ContentComponent } from './components/content/content.component';
+import { LevelControlService, ItemControlService } from './services/settings.service';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +16,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     declarations: [
         AppComponent,
         NavbarComponent,
-        SettingsComponent
+        SettingsComponent,
+        ContentComponent
     ],
     imports: [
         BrowserModule,
@@ -23,7 +25,7 @@ import { SettingsComponent } from './components/settings/settings.component';
         FormsModule,
         ReactiveFormsModule
     ],
-    providers: [SettingsService],
+    providers: [LevelControlService, ItemControlService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
