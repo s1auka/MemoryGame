@@ -8,15 +8,8 @@
     <tbody>
         <tr *ngFor="let column of columns">
             <td *ngFor=" let row of rows" class="card-back" (click)="checkCard($event);"
-                attr.cell-number='{{cells[row+column*rows.length]}}'
+                attr.cell-number="{{cells[row+column*rows.length]}}" attr.in-game='{{"true"}}'
                 attr.data-value='{{imagesSrcs[row+column*rows.length][1]}}' style=" width:{{100/rows.length}}%;">
-                <!-- <div class="card-back"></div> -->
-                <!-- <div class="card-back"
-                    style='height:100%;background-image: url({{imagesSrcs?imagesSrcs[rows?row+column*rows.length:0][0]:""}});background-repeat: no-repeat;'>
-                </div> -->
-                <!-- <div class="card-back"
-                    style='height:100%;background-image: url({{imagesSrcs?imagesSrcs[rows?row+column*rows.length:0][0]:""}});background-repeat: no-repeat;'>
-                </div> -->
             </td>
         </tr>
     </tbody>

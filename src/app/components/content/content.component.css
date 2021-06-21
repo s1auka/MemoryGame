@@ -5,13 +5,17 @@
 }
 
 .card-back {
-    /* height:100%; */
-    padding: 10px;
     background-image: url("./../../../assets/pictures/cardBack.jpg");
     background-repeat: no-repeat;
     border:1px solid black;
     border-radius: 15px;
 }
+
+.done {
+    background-image: url("./../../../assets/pictures/done.png");
+}
+
+
 
 .table-area{
     width: 100%;
