@@ -46,7 +46,7 @@ export class ContentComponent {
         let imgSrc: string;
 
         for (let i = 0; i < n / 2; i++) {
-            imgSrc = "/assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost
+            imgSrc = "./../../../assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost
             array.push([imgSrc, i]);
             array.push([imgSrc, i]);
 
@@ -61,7 +61,6 @@ export class ContentComponent {
             let numberOfPicture = elem.attributes["cell-number"].value;
             let pictureSrc = "url(" + this.imagesSrcs[+numberOfPicture][0] + ")";
 
-            console.log(numberOfPicture);
             elem.style.backgroundImage = pictureSrc;
 
             if (this.firstOpenedCard != elem) {
