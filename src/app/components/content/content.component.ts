@@ -46,7 +46,7 @@ export class ContentComponent {
         let imgSrc: string;
 
         for (let i = 0; i < n / 2; i++) {
-            imgSrc = "./../../../assets/pictures/" + i + ".png";
+            imgSrc = "/assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost
             array.push([imgSrc, i]);
             array.push([imgSrc, i]);
 
