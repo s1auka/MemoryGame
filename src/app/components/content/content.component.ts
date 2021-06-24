@@ -12,7 +12,6 @@ export class ContentComponent {
     columns: number[] | undefined;
     rows: number[] = [];
     imagesSrcs: (string | number)[][] = [[]];//[src, numberOfPicture]
-    //cardBack: string;
     firstOpenedCard: any = undefined;
     secondOpenedCard: any = undefined;
     cells: number[] = [];
@@ -23,7 +22,6 @@ export class ContentComponent {
 
     constructor(private itemControlService: ItemControlService, private router: Router) {
         this.gameOn = false;
-        //this.cardBack = "./../../../assets/pictures/cardBack.jpg"
     }
 
     private toggleGameStatus() {
@@ -46,7 +44,7 @@ export class ContentComponent {
         let imgSrc: string;
 
         for (let i = 0; i < n / 2; i++) {
-            imgSrc = "/assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost
+            imgSrc = "./../../../assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost, /assets/pictures/ gpages
             array.push([imgSrc, i]);
             array.push([imgSrc, i]);
 
