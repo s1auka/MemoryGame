@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-content',
     templateUrl: './content.component.html',
-    styleUrls: ['./content.component.css']
+    styleUrls: ['./content.component.scss']
 })
 export class ContentComponent {
     gameOn: boolean;
@@ -44,7 +44,7 @@ export class ContentComponent {
         let imgSrc: string;
 
         for (let i = 0; i < n / 2; i++) {
-            imgSrc = "./../../../assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost, /assets/pictures/ gpages
+            imgSrc = "/MemoryGame/assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost, /MemoryGame/assets/pictures/ gpages
             array.push([imgSrc, i]);
             array.push([imgSrc, i]);
 
