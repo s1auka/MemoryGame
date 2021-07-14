@@ -14,6 +14,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/users/user/user.component';
+import { UserTestInfoComponent } from './components/users/user-test-info/user-test-info.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UserComponent } from './components/users/user/user.component';
         SettingsComponent,
         ContentComponent,
         UsersComponent,
-        UserComponent
+        UserComponent,
+        UserTestInfoComponent
     ],
     imports: [
         BrowserModule,

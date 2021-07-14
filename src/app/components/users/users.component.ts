@@ -18,4 +18,9 @@ export class UsersComponent implements OnInit {
         });
     }
 
+
+    onIdClick(id: number) {
+        alert(id)
+    }
+
 }
