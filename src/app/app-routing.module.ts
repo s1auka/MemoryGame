@@ -1,3 +1,5 @@
+import { UserComponent } from './components/users/user/user.component';
+import { UsersComponent } from './components/users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,6 +12,8 @@ const routes: Routes = [
     { path: '', component: ContentComponent },
     { path: 'settings', component: SettingsComponent },
     { path: 'rules', component: RulesComponent },
+    { path: 'users', component: UsersComponent },
+    { path: 'user/:id', component: UserComponent },
     { path: '**', redirectTo: '/' }
 ];
 

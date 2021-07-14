@@ -1,0 +1,12 @@
+:host{
+    h3 {
+        text-align: center;
+    }
+    .info {
+        text-decoration: underline;
+        &:hover{
+            color:blue;
+            cursor:pointer;
+        }
+    }
+}

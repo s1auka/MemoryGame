@@ -1,0 +1,4 @@
+<h3>users from jsonplaceholder</h3>
+<div *ngFor="let user of users" class="info">
+    <a [routerLink]="['/user',user.id]">{{user.name}}</a>
+</div>
