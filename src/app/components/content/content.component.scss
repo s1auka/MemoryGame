@@ -12,7 +12,9 @@
 }
 
 .done {
-    background-image: url("./../../../assets/pictures/done.png");
+    background-image: url("./../../../assets/pictures/done.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 

@@ -6,10 +6,10 @@
 
 <table class="table-area" [hidden]="!gameOn">
     <tbody>
-        <tr *ngFor="let column of columns">
-            <td *ngFor=" let row of rows" class="card-back" (click)="checkCard($event);"
-                attr.cell-number="{{cells[row+column*rows.length]}}" attr.in-game='{{"true"}}'
-                attr.data-value='{{imagesSrcs[row+column*rows.length][1]}}' style=" width:{{100/rows.length}}%;">
+        <tr *ngFor="let row of rows">
+            <td *ngFor=" let column of columns" class="card-back" (click)="checkCard($event);"
+                attr.cell-number="{{cells[column+row*columns.length]}}" attr.in-game='{{"true"}}'
+                attr.data-value='{{imagesSrcs[column+row*columns.length].num}}'>
             </td>
         </tr>
     </tbody>

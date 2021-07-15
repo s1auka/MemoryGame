@@ -15,6 +15,7 @@ import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/users/user/user.component';
 import { UserTestInfoComponent } from './components/users/user-test-info/user-test-info.component';
+import { PreloaderComponent } from './components/common/preloader/preloader.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UserTestInfoComponent } from './components/users/user-test-info/user-te
         ContentComponent,
         UsersComponent,
         UserComponent,
-        UserTestInfoComponent
+        UserTestInfoComponent,
+        PreloaderComponent
     ],
     imports: [
         BrowserModule,
@@ -34,7 +36,7 @@ import { UserTestInfoComponent } from './components/users/user-test-info/user-te
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [LevelControlService, ItemControlService, GetUsersService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

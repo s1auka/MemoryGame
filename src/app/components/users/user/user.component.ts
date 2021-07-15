@@ -2,7 +2,6 @@ import { GetUsersService } from './../../../services/get-users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { User } from 'src/app/user';
 
 @Component({
     selector: 'user-info',

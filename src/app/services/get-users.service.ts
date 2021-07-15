@@ -9,7 +9,9 @@ const USERS_URL = 'https://jsonplaceholder.typicode.com/users'
 
 
 
-@Injectable()
+@Injectable({
+    providedIn: "root"
+})
 export class GetUsersService {
     users: User[] = [];
 

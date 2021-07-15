@@ -21,7 +21,9 @@ export interface CardsInTable {
     totalCards: Number;
 }
 
-@Injectable()
+@Injectable({
+    providedIn: "root"
+})
 export class LevelControlService {
 
     getLevels(): string[] {
@@ -38,7 +40,9 @@ export class LevelControlService {
 }
 
 
-
+@Injectable({
+    providedIn: "root"
+})
 export class ItemControlService {
 
     getCardsInRowAndColumn(): CardsInTable {

@@ -2,6 +2,11 @@ import { ItemControlService } from './../../services/settings.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface ImagesSrc {
+    src: string,
+    num: number,
+}
+
 @Component({
     selector: 'app-content',
     templateUrl: './content.component.html',
@@ -9,9 +14,9 @@ import { Router } from '@angular/router';
 })
 export class ContentComponent {
     gameOn: boolean;
-    columns: number[] | undefined;
+    columns: number[] = [];
     rows: number[] = [];
-    imagesSrcs: (string | number)[][] = [[]];//[src, numberOfPicture]
+    imagesSrcs: ImagesSrc[] = [];
     firstOpenedCard: any = undefined;
     secondOpenedCard: any = undefined;
     cells: number[] = [];
@@ -33,20 +38,23 @@ export class ContentComponent {
         let cardsInTable = this.itemControlService.getCardsInRowAndColumn();
 
         this.totalCards = +cardsInTable.totalCards;
-        this.columns = [...Array(cardsInTable.cardsInColumn).keys()];
-        this.rows = [...Array(cardsInTable.cardsInRow).keys()];
+        this.rows = [...Array(cardsInTable.cardsInColumn).keys()];
+        this.columns = [...Array(cardsInTable.cardsInRow).keys()];
+        console.log(this.rows)
         this.imagesSrcs = this.getImagesSrcs(+cardsInTable.totalCards);
         this.cells = [...Array(cardsInTable.totalCards).keys()]
     }
 
-    private getImagesSrcs(n: number): (string | number)[][] {
+    //private getImagesSrcs(n: number): (string | number)[][] {
+    private getImagesSrcs(n: number): ImagesSrc[] {
         let array = [];
         let imgSrc: string;
 
         for (let i = 0; i < n / 2; i++) {
-            imgSrc = "/MemoryGame/assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost, /MemoryGame/assets/pictures/ gpages
-            array.push([imgSrc, i]);
-            array.push([imgSrc, i]);
+            imgSrc = "./../../../assets/pictures/" + i + ".png"; //   ./../../../assets/pictures/ for localhost, /MemoryGame/assets/pictures/ gpages
+
+            array.push({ src: imgSrc, num: i });
+            array.push({ src: imgSrc, num: i });
 
         }
         return this.shuffle(array);
@@ -57,7 +65,8 @@ export class ContentComponent {
         let elem = event.target;
         if ((this.openedCards < this.totalCards) && (elem.attributes["in-game"].value == "true")) {
             let numberOfPicture = elem.attributes["cell-number"].value;
-            let pictureSrc = "url(" + this.imagesSrcs[+numberOfPicture][0] + ")";
+
+            let pictureSrc = "url(" + this.imagesSrcs[+numberOfPicture].src + ")";
 
             elem.style.backgroundImage = pictureSrc;
 
@@ -89,7 +98,7 @@ export class ContentComponent {
         }
     }
 
-    private shuffle(array: (string | number)[][]): (string | number)[][] {
+    private shuffle(array: ImagesSrc[]): ImagesSrc[] {
         for (let i = array.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
