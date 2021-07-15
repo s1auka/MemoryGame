@@ -9,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
     users: User[] = [];
+    isLoading: boolean = true;
     constructor(private getHttpUsers: GetUsersService) { }
 
     ngOnInit(): void {
         this.getHttpUsers.getUsers().subscribe((data: User[]) => {
+            this.isLoading = false;
             this.users = data;
             this.getHttpUsers.setUsers(this.users);
         });

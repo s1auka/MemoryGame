@@ -1,5 +1,5 @@
 import { ItemControlService } from './../../services/settings.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface ImagesSrc {
@@ -12,8 +12,8 @@ interface ImagesSrc {
     templateUrl: './content.component.html',
     styleUrls: ['./content.component.scss']
 })
-export class ContentComponent {
-    gameOn: boolean;
+export class ContentComponent implements OnInit {
+    gameOn: boolean = false;
     columns: number[] = [];
     rows: number[] = [];
     imagesSrcs: ImagesSrc[] = [];
@@ -26,7 +26,9 @@ export class ContentComponent {
 
 
     constructor(private itemControlService: ItemControlService, private router: Router) {
-        this.gameOn = false;
+    }
+
+    ngOnInit(): void {
     }
 
     private toggleGameStatus() {
@@ -45,7 +47,6 @@ export class ContentComponent {
         this.cells = [...Array(cardsInTable.totalCards).keys()]
     }
 
-    //private getImagesSrcs(n: number): (string | number)[][] {
     private getImagesSrcs(n: number): ImagesSrc[] {
         let array = [];
         let imgSrc: string;

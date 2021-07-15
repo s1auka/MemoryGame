@@ -1,4 +1,5 @@
 <h3>users from jsonplaceholder</h3>
+<app-preloader [isLoading]="isLoading"></app-preloader>
 <div *ngFor="let user of users" class="info">
     <a [routerLink]="['/user',user.id]">{{user.name}}</a>
     <user-test-info [userId]=user.id (onIdClick)="onIdClick($event)"></user-test-info>

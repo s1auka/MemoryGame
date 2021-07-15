@@ -1,0 +1,8 @@
+.loader{
+    width:100px;
+    height: 100px;
+    background-image: url('./../../../../assets/pictures/preloader.gif');
+    background-repeat: no-repeat;
+}
+
+/* './../../../../assets/pictures/preloader.gif'  for localhost */

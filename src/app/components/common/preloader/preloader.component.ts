@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-preloader',
-  templateUrl: './preloader.component.html',
-  styleUrls: ['./preloader.component.css']
+    selector: 'app-preloader',
+    templateUrl: './preloader.component.html',
+    styleUrls: ['./preloader.component.css']
 })
 export class PreloaderComponent implements OnInit {
 
-  constructor() { }
+    @Input() isLoading: boolean = true;
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }
